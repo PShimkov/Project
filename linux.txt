@@ -1,0 +1,309 @@
+#TASK2
+ubuntu@ip-172-31-45-201:~$ cd ~
+ubuntu@ip-172-31-45-201:~$ mkdir first
+ubuntu@ip-172-31-45-201:~$ ls
+archive.tar.gz  count.py          first         task4.py
+count.log       create_matrix.py  home_work.py  task5.txt
+ubuntu@ip-172-31-45-201:~$ mkdir second
+ubuntu@ip-172-31-45-201:~$ cd first/
+ubuntu@ip-172-31-45-201:~/first$ ls
+ubuntu@ip-172-31-45-201:~/first$ pwd
+/home/ubuntu/first
+ubuntu@ip-172-31-45-201:~/first$ vim first.py
+ubuntu@ip-172-31-45-201:~/first$ ls
+first.py
+ubuntu@ip-172-31-45-201:~/first$ cd ~
+ubuntu@ip-172-31-45-201:~$ cd second/
+ubuntu@ip-172-31-45-201:~/second$ vim second.py
+ubuntu@ip-172-31-45-201:~/second$ mv second.py /first
+mv: cannot move 'second.py' to '/first': Permission denied
+ubuntu@ip-172-31-45-201:~/second$ mv second.py /home/first
+mv: cannot move 'second.py' to '/home/first': Permission denied
+ubuntu@ip-172-31-45-201:~/second$ mv second.py /home
+mv: cannot move 'second.py' to '/home/second.py': Permission denied
+ubuntu@ip-172-31-45-201:~/second$ ls
+second.py
+ubuntu@ip-172-31-45-201:~/second$ cd~
+
+Command 'cd~' not found, did you mean:
+
+  command 'cdb' from deb tinycdb
+  command 'cdo' from deb cdo
+  command 'cde' from deb cde
+  command 'cdp' from deb irpas
+  command 'cdw' from deb cdw
+  command 'cd5' from deb cd5
+  command 'cdv' from deb codeville
+  command 'cdi' from deb cdo
+
+Try: sudo apt install <deb name>
+
+ubuntu@ip-172-31-45-201:~/second$ cd ~
+ubuntu@ip-172-31-45-201:~$ mv second/second.py first/first.py
+ubuntu@ip-172-31-45-201:~$ rm second/
+rm: cannot remove 'second/': Is a directory
+ubuntu@ip-172-31-45-201:~$ rm -r second/
+ubuntu@ip-172-31-45-201:~$ ls
+archive.tar.gz  count.py          first         task4.py
+count.log       create_matrix.py  home_work.py  task5.txt
+ubuntu@ip-172-31-45-201:~$ cd first/
+ubuntu@ip-172-31-45-201:~/first$ ls
+first.py
+ubuntu@ip-172-31-45-201:~/first$ cd ~
+ubuntu@ip-172-31-45-201:~$ mv first first_second
+ubuntu@ip-172-31-45-201:~$ ls
+archive.tar.gz  count.py          first_second  task4.py
+count.log       create_matrix.py  home_work.py  task5.txt
+ubuntu@ip-172-31-45-201:~$ rm -r first_second/
+ubuntu@ip-172-31-45-201:~$ ls
+archive.tar.gz  count.py          home_work.py  task5.txt
+count.log       create_matrix.py  task4.py
+ubuntu@ip-172-31-45-201:~$
+
+
+#TASK 3
+ubuntu@ip-172-31-45-201:~$ vim task3.py
+ubuntu@ip-172-31-45-201:~$ vim task3.py
+ubuntu@ip-172-31-45-201:~$ wc task3.py
+ 2  2 20 task3.py
+ubuntu@ip-172-31-45-201:~$ wc -l task3.py
+2 task3.py
+ubuntu@ip-172-31-45-201:~$ echo 'print(Linear regression.)' > task3_1.py
+ubuntu@ip-172-31-45-201:~$ cat task3.py task3_1.py
+print(hello world)
+print(Linear regression.)
+
+#TASK 4
+
+ubuntu@ip-172-31-45-201:~$ cat home_work.py
+print(new line_2)
+ubuntu@ip-172-31-45-201:~$ sudo useradd -m -s /bin/bash user_home
+ubuntu@ip-172-31-45-201:~$ sudo passwd user_home
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+ubuntu@ip-172-31-45-201:~$ cat /
+bin/            lib/            root/           usr/
+boot/           lib64/          run/            var/
+dev/            lost+found/     sbin/           vmlinuz
+etc/            media/          snap/           vmlinuz.old
+home/           mnt/            srv/
+initrd.img      opt/            sys/
+initrd.img.old  proc/           tmp/
+ubuntu@ip-172-31-45-201:~$ cat /etc/passwd | grep user_home
+user_home:x:1001:1001::/home/user_home:/bin/bash
+ubuntu@ip-172-31-45-201:~$ ls -l
+total 12
+-rw-rw-r-- 1 ubuntu ubuntu 71 May 22 16:26 create_matrix.py
+-rw-rw-rw- 1 ubuntu ubuntu 18 May 22 17:09 home_work.py
+-rw-rw-r-- 1 ubuntu ubuntu 20 May 24 17:28 task4.py
+ubuntu@ip-172-31-45-201:~$ sudo chmod o+w task4.py
+ubuntu@ip-172-31-45-201:~$ ls -l
+total 12
+-rw-rw-r-- 1 ubuntu ubuntu 71 May 22 16:26 create_matrix.py
+-rw-rw-rw- 1 ubuntu ubuntu 18 May 22 17:09 home_work.py
+-rw-rw-rw- 1 ubuntu ubuntu 20 May 24 17:28 task4.py
+ubuntu@ip-172-31-45-201:~$ su user_home
+Password:
+user_home@ip-172-31-45-201:/home/ubuntu$ ls -l
+total 12
+-rw-rw-r-- 1 ubuntu ubuntu 71 May 22 16:26 create_matrix.py
+-rw-rw-rw- 1 ubuntu ubuntu 18 May 22 17:09 home_work.py
+-rw-rw-rw- 1 ubuntu ubuntu 20 May 24 17:28 task4.py
+user_home@ip-172-31-45-201:/home/ubuntu$ vim task4.py
+user_home@ip-172-31-45-201:/home/ubuntu$ cat task4.py
+print("new line")
+
+user_home@ip-172-31-45-201:/home/ubuntu$ vim num.py
+
+[No write since last change]
+/bin/bash: q: command not found
+
+shell returned 127
+
+Press ENTER or type command to continue
+user_home@ip-172-31-45-201:/home/ubuntu$
+user_home@ip-172-31-45-201:/home/ubuntu$
+user_home@ip-172-31-45-201:/home/ubuntu$ ls -l
+total 12
+-rw-rw-r-- 1 ubuntu ubuntu 71 May 22 16:26 create_matrix.py
+-rw-rw-rw- 1 ubuntu ubuntu 18 May 22 17:09 home_work.py
+-rw-rw-rw- 1 ubuntu ubuntu 19 May 24 17:39 task4.py
+user_home@ip-172-31-45-201:/home/ubuntu$ cd ~
+user_home@ip-172-31-45-201:~$ pwd
+/home/user_home
+user_home@ip-172-31-45-201:~$ vim numb.py
+user_home@ip-172-31-45-201:~$ cat numb.py
+
+#TASK 5
+ubuntu@ip-172-31-45-201:~$ htop
+ubuntu@ip-172-31-45-201:~$ find *.py
+create_matrix.py
+home_work.py
+task4.py
+ubuntu@ip-172-31-45-201:~$ vim count.py
+ubuntu@ip-172-31-45-201:~$ vim count.py
+ubuntu@ip-172-31-45-201:~$ ls
+archive.tar.gz  count.py  create_matrix.py  home_work.py  task4.py  task5.txt
+ubuntu@ip-172-31-45-201:~$ python3 count.py > count.log
+
+exit
+exit()
+ptint(i)
+^Z
+[1]+  Stopped                 python3 count.py > count.log
+ubuntu@ip-172-31-45-201:~$ python3 count.py > count.log &
+[2] 26693
+ubuntu@ip-172-31-45-201:~$ htop
+[2]-  Done                    python3 count.py > count.log
+ubuntu@ip-172-31-45-201:~$
+
+#TASK 6
+
+Создал новый инстанс и диск. Далее зашел через ssh на новый инстанс
+
+ubuntu@ip-172-31-45-201:~$ ssh -i ~/Desktop/key1.pem ubuntu@18.217.6.13
+ubuntu@ip-172-31-45-201:~$ sudo mkdir /data
+ubuntu@ip-172-31-45-201:~$ sudo mount /dev/xvdf /data
+ubuntu@ip-172-31-45-201:~$ 
+
+#TASK 7
+
+ubuntu@ip-172-31-45-201:~$ ls /home/ubuntu | grep 'py'
+count.py
+create_matrix.py
+home_work.py
+task4.py
+ubuntu@ip-172-31-45-201:~$ awk '{ print(*)}' /home/ubuntu/*.py
+awk: cmd. line:1: { print(*)}
+awk: cmd. line:1:         ^ syntax error
+ubuntu@ip-172-31-45-201:~$ awk '{ print}' /home/ubuntu/*.py
+import time
+
+for i in range(0, 100):
+    print(i)
+    time.sleep(1)
+import numpy as np
+
+a = np.arange(12)
+b = a.reshape((-1, 4))
+
+print(b)
+print(new line_2)
+print("new line")
+
+ubuntu@ip-172-31-45-201:~$ uptime
+ 07:43:02 up 14 days, 7 min,  3 users,  load average: 0.00, 0.00, 0.00
+ubuntu@ip-172-31-45-201:~$ Last login: Sun May 31 07:30:35 2020 from 176.59.148.58
+ubuntu@ip-172-31-45-201:~$ cat $(ls |grep '.*\py$') | grep 'print'
+    print(i)
+print(b)
+print(new line_2)
+print("new line")
+ubuntu@ip-172-31-45-201:~$
+ubuntu@ip-172-31-45-201:~$ uptime | sed 's/^.*up \+\([^,]*\), .*/\1/'
+14 days
+
+#TASK 8
+ubuntu@ip-172-31-45-201:~$ for n in {1..3}; do echo $USER; done
+ubuntu
+ubuntu
+ubuntu
+ubuntu@ip-172-31-45-201:~$ nano test.sh
+ubuntu@ip-172-31-45-201:~$ ./test.sh
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+ubuntu@ip-172-31-45-201:~$
+ubuntu@ip-172-31-45-201:~$ cat test.sh
+#!/bin/bash
+counter=1
+while [ $counter -le 100 ]
+do
+        if [ $(($counter % 2)) == 0 ]
+        then
+                echo $counter
+        fi
+((counter++))
+done
+
+ubuntu@ip-172-31-45-201:~$
+ubuntu@ip-172-31-45-201:~$ nano test.txt
+ubuntu@ip-172-31-45-201:~$ car test.txt
+
+Command 'car' not found, but can be installed with:
+
+sudo apt install ucommon-utils
+
+ubuntu@ip-172-31-45-201:~$ cat test.txt
+asdasadasdasd
+ubuntu@ip-172-31-45-201:~$ crontab -e
+no crontab for ubuntu - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]: 1
+crontab: installing new crontab
+ubuntu@ip-172-31-45-201:~$ chmod x+ test.txt
+chmod: invalid mode: ‘x+’
+Try 'chmod --help' for more information.
+ubuntu@ip-172-31-45-201:~$ chmod +x test.txt
+ubuntu@ip-172-31-45-201:~$ crontab -e
+crontab: installing new crontab
+ubuntu@ip-172-31-45-201:~$
+
+
+
+
+
